@@ -22,11 +22,11 @@ if __name__ == "__main__":
     frontal_face = cv2.CascadeClassifier(case_file)
     input_file = os.listdir("./"+input_path)
     print("Starting to detect faces and save the cropped images...")
-    start_time = time.time()
+    starting_time = time.time()
     for file_name in input_file:
         color_image = cv2.imread(input_path+file_name)
         gray_image = cv2.cvtColor(color_image, cv2.COLOR_BGR2GRAY)
         bBoxes = frontal_face.detectMultiScale(image=gray_image, scaleFactor=1.3, minNeighbors=5, minSize=(30,30))
         for idx, bBox in enumerate(bBoxes):
             crop_face(image=gray_image, box=bBox, file_name="{}_{}".format(idx, file_name))
-    print("Finished {} images in {:.2f} Seconds." .format(len(input_file) , (time.time() - start_time)))
+    print("Finished {} images in {:.2f} Seconds." .format(len(input_file) , (time.time() - starting_time)))
