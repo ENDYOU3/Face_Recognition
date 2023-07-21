@@ -5,21 +5,19 @@ import pandas as pd
 import time
 
 feature_path = "./group_face/"
-img_pixel = (512,512)
 
 def save_labels(target_name):
     df = pd.DataFrame(target_name, columns=['name'])
     df.to_csv("target.csv")
     print("Save labels...\n{}\n".format(target_name))
 
-def get_data(path, size):
+def get_data(path):
     target_id = 0
     images, labels = [], []
     target_name = []
     for subdir in os.listdir(path):
         for face_file in os.listdir(path+subdir):
             image = cv2.imread(path+os.path.sep+subdir+os.path.sep+face_file, cv2.IMREAD_GRAYSCALE)
-            image = cv2.resize(image, size)
             images.append(np.asarray(image, dtype=np.uint8))
             labels.append(target_id)
         target_id += 1
@@ -28,7 +26,7 @@ def get_data(path, size):
     return [images, labels, target_name]
 
 def train_model(path):
-    [images, labels, target_name] = get_data(path, size=img_pixel)
+    [images, labels, target_name] = get_data(path)
     labels = np.asarray(labels, dtype=np.int32)
     print("Total trained images: {}".format(len(images)))
     print("Total target: {}".format(len(target_name)))
