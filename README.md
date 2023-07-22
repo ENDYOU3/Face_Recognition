@@ -68,7 +68,7 @@ Face recognition is a method of identifying or verifying the identity of an indi
 ```
 
 ## Screenshots
-
+![predict_by_image](https://github.com/ENDYOU3/Face_Recognition/assets/103243756/7191be42-8fae-4491-a342-2e9f1dd88946)
 
 
 ## Credit
