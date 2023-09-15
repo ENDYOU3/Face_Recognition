@@ -45,15 +45,20 @@ Face recognition is a method of identifying or verifying the identity of an indi
 ## Usage
 
 ### Data prepare
-   -  Collect samples of images in the `face_samples` folder.
+   
+   `Training Set`
+   -  Collect samples of images in `train_file` >> `face_samples`
       - Collect only face images.
+
          ```bash
          python crop_face.py
          ```
-         -  The result will be a face images is stored in the `crop_face` folder. 
-         -  Move and divide into groups from the `crop_face` folder to the `group_face` folder.
+         -  Inside `train_file` :
+            -  The result will be a face images is stored in `crop_face`
+            -  Move and divide into groups from the `crop_face` folder to the `group_face` folder.
          
-   -  Collect samples of video file in the `test_file` folder.
+   `Test Set`
+   - Collect samples of video file in the `test_file` folder.
       -  `test_file` >> `image` for samples image
       -  `test_file` >> `video` for samples video file
 
@@ -61,7 +66,7 @@ Face recognition is a method of identifying or verifying the identity of an indi
 ```bash
    python training.py
 ```
-   -  use face in `group_face` folder.
+   -  use data to training in `group_face` folder.
 
 ### Predict model
 **predicting model has 2 options**

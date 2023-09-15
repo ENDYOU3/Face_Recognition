@@ -40,7 +40,9 @@ if __name__ == "__main__":
         for bBox in bBoxes:
             [x, y, w, h] = bBox
             crop_image = gray_image[y:y+h, x:x+w]
+            print(crop_image.shape)
             crop_image = cv2.resize(crop_image, img_pixel)
+            print(crop_image.shape)
             # Predict
             [pred_label, pred_conf] = face_model.predict(crop_image)
             box_text = y_label[pred_label]
