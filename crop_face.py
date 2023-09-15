@@ -3,7 +3,7 @@ import os
 import cv2
 import time
 
-input_path = "face_samples/" 
+input_path = "train_file/face_samples/" 
 casc_file = cv2.data.haarcascades+"haarcascade_frontalface_default.xml"
 img_pixel = (64, 64)
 
@@ -14,9 +14,9 @@ def crop_face(image, bBox, file_name):
 
 def save_crop_image(image, file_name, size):
     image = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
-    if "crop_face" not in os.listdir('./'):
+    if "crop_face" not in os.listdir('./train_file'):
         os.mkdir("crop_face")
-    cv2.imwrite("crop_face/"+file_name, image)
+    cv2.imwrite("train_file/crop_face/"+file_name, image)
 
 if __name__ == "__main__":
     frontal_face = cv2.CascadeClassifier(casc_file)

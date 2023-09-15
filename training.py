@@ -4,7 +4,7 @@ import cv2
 import pandas as pd
 import time
 
-feature_path = "./group_face/"
+feature_path = ".train_file/group_face/"
 
 def save_labels(target_name):
     df = pd.DataFrame(target_name, columns=['name'])
