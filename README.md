@@ -50,7 +50,7 @@ Face recognition is a method of identifying or verifying the identity of an indi
          ```bash
          python crop_face.py
          ```
-         -  The result will be a face image. is stored in the `crop_face` folder. 
+         -  The result will be a face images is stored in the `crop_face` folder. 
          -  Move and divide into groups from the `crop_face` folder to the `group_face` folder.
          
    -  Collect samples of video file in the `test_file` folder.
